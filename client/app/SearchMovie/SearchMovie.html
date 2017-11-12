@@ -1,0 +1,64 @@
+<br><br><br><br><br><div class="container">
+  <div class="row">
+    <div class="col-md-12">
+<div class="form-group">
+  <input type="text" ng-model="SearchMovieCtrl.MovieName" class="form-control" placeholder="Movie Name">
+
+</div>
+<div class="form-group">
+  <input type="text" ng-model="SearchMovieCtrl.Year" class="form-control" placeholder="Year">
+
+</div>
+        <div class="form-group">
+          <button class="btn btn-success" name="button" ng-click="SearchMovieCtrl.FindMovie()">Search Movie</button>
+
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <tr>
+          <th>Poster</th>
+<th>Movie Name</th>
+<th>Genre</th>
+<th>Duration</th>
+<th>Action</th>
+        </tr>
+<tr>
+  <td><img src="https://image.tmdb.org/t/p/w500/{{SearchMovieCtrl.MovieData.poster_path}}" alt="" height="300" width="200"></td>
+  <td>{{SearchMovieCtrl.MovieData.original_title}}</td>
+  <td><span ng-repeat="gen in SearchMovieCtrl.MovieData.genres">{{gen.name}},</span></td>
+  <td>{{SearchMovieCtrl.MovieData.runtime}}</td>
+
+  <td><button class="btn btn-primary" name="button" ng-click="SearchMovieCtrl.addMovie()">Add Movie</button></td>
+
+</tr>
+
+
+      </table>
+      <!-- <div class="form-group">
+        <button class="btn btn-info" name="button" ng-click="moviesCtrl.addMovie()">Add Movie</button>
+
+      </div> --><br> <br> <br> <br> <br>
+    <center>  <caption><h3 class="text-primary"><u>Added Movies</u></h3></caption>
+      <table class="table">
+        <tr>
+          <th>Movie Name</th>
+          <th> Duration</th>
+          <th>Poster</th>
+        </tr>
+        <tr ng-repeat = "m in SearchMovieCtrl.MovieDetails">
+          <td>{{m.Title}}</td>
+          <td>{{m.Duration}}</td>
+          <td><img src="{{m.Poster}}" alt=""></td>
+
+          <td><button type="submit" class="btn btn-danger" ng-click="SearchMovieCtrl.remove(m)"><span class="glyphicon glyphicon-trash"></span></button></td>
+
+        </tr>
+
+      </table>
+    </div>
+
+  </div>
+    </div>

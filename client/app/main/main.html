@@ -1,0 +1,229 @@
+<header class="hero-unit" id="banner">
+  <br><br><div class="container">
+
+
+  
+
+
+
+<br><br>
+<div class="carousel slide" id="carousel-373791">
+    				<ol class="carousel-indicators">
+    					<li class="active" data-slide-to="0" data-target="#carousel-373791">
+    					</li>
+    					<li data-slide-to="1" data-target="#carousel-373791">
+    					</li>
+    					<li data-slide-to="2" data-target="#carousel-373791">
+    					</li>
+              <li data-slide-to="3" data-target="#carousel-373791">
+    					</li>
+              <li data-slide-to="4s" data-target="#carousel-373791">
+    					</li>
+    				</ol>
+    				<div class="carousel-inner">
+    					<div class="item active">
+    						<img alt="Carousel Bootstrap First" src="assets/images/12.jpg" height="200"  width="100%"/>
+    						<div class="carousel-caption">
+    							<h4>
+
+    							</h4>
+
+    						</div>
+    					</div>
+    					<div class="item">
+    						<img alt="Carousel Bootstrap Second" src="assets/images/d.jpg" height="200" width="100%"/>
+    						<div class="carousel-caption">
+    							<h4>
+
+    							</h4>
+
+    						</div>
+    					</div>
+    					<div class="item">
+    						<img alt="Carousel Bootstrap Third" src="assets/images/ll.jpg" height="200" width="100%" />
+    						<div class="carousel-caption">
+    							<h4>
+
+    							</h4>
+
+    						</div>
+    					</div>
+              <div class="item">
+    						<img alt="Carousel Bootstrap Fourth" src="assets/images/15.jpg" height="200" width="100%" />
+    						<div class="carousel-caption">
+    							<h4>
+
+    							</h4>
+
+    						</div>
+    					</div>
+              <div class="item">
+    						<img alt="Carousel Bootstrap Fifth" src="assets/images/13.jpg" height="200" width="100%" />
+    						<div class="carousel-caption">
+    							<h4>
+
+    							</h4>
+
+    						</div>
+    					</div>
+    				</div> <a class="left carousel-control" href="#carousel-373791" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-373791" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    			</div>
+<!--end of carousel-->
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-lg-12">
+    <p style="text-align:center" id="nshow"><span class="nowshowing"><h3 id="nowshow">NOW SHOWING</h3></span></p>
+    <br/>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-md-9">
+      <div class="row">
+    
+
+     <div class="col-md-3" ng-repeat="x in $ctrl.mapp_arr ">
+          <a  ng-click="$ctrl.ShowDialog(MOVIENAME)"><img width="180" height="240" src=https://image.tmdb.org/t/p/w500/{{x.POSTER}}></a><br/><br/>
+          <div class="bookDetailsTab"><p>{{x.MOVIENAME}}</p></div><br/>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="row">
+      <form class="movie-form">
+        <div class="form-group">
+          <select class="form-control" id="MovieTitle" ng-model="$ctrl.MoviesName">
+            <option value="">Select Movie</option>
+            <option ng-repeat="x in $ctrl.mapp_arr  " >{{x.MOVIENAME}}</option>
+          </select>
+        </div>
+      </form>
+      </div>
+      <div class="row">
+      <form class="movie-form">
+        <div class="form-group">
+          <select class="form-control" id="MovieDates" ng-model="$ctrl.MoviesDate">
+            <option value="">Select Date</option>
+            <option  ng-repeat="y in $ctrl.mapp_arr" >{{y.DATE}}</option>
+      <!--    <option  ng-show=" $ctrl.MoviesName"ng-repeat="y in $ctrl.mapp_arr  |unique: 'DATE'" >{{y.DATE}}</option>-->
+          </select>
+        </div>
+      </form>
+      </div>
+      <div class="row">
+      <form class="movie-form">
+        <div class="form-group">
+          <select class="form-control" ng-model="$ctrl.city">
+            <option value="">Select City</option>
+    				<option  ng-repeat="x in $ctrl.mapp_arr ">{{x.CITYNAME}}</option>
+    			</select>
+        </div>
+      </form>
+      </div>
+      <div class="row">
+      <form class="movie-form">
+        <div class="form-group">
+          <select class="form-control" id="Theatre" ng-model="$ctrl.theatre">
+            <option value="">Select Cinema</option>
+            <option   ng-repeat="x in $ctrl.mapp_arr  ">{{x.THEATRENAME}}</option>
+          </select>
+        </div>
+      </form>
+      </div>
+      <div class="row">
+      <form class="movie-form">
+        <div class="form-group">
+          <select class="form-control" id="SeatClass">
+            <option>Select Class</option>
+            <option>PLATINUM</option>
+            <option>GOLD</option>
+            <option>SILVER</option>
+          </select>
+        </div>
+      </form>
+      </div>
+      <div class="row">
+      <form class="movie-form">
+        <div class="form-group">
+          <select class="form-control" id="ShowTimings" ng-model="$ctrl.ShowTimeddl">
+            <option value="">Select Time</option>
+          <!--  <optgroup ng-show="$ctrl.CinemaName" label="Available Timings" ng-repeat="s in $ctrl.movieMap | filter: {'TheatreName': $ctrl.CinemaName} | filter: {'MovieName': $ctrl.MoviesName} | filter: {'MovieDates': $ctrl.MoviesDate}">
+              <option ng-repeat="st in s.ShowTimings">{{st}}</option>
+            </optgroup>-->
+            <option ng-repeat="x in $ctrl.mapp_arr">{{x.HOUR}}:{{x.MINUTE}}:{{x.AMPM}}</option>
+          </select>
+        </div>
+      </form>
+      </div>
+      <div class="row">
+      <form class="movie-form">
+        <div class="form-group">
+          <select class="form-control" id="NoSeats">
+            <option>No. of Seats</option>
+            <option>1</option><option>2</option>
+            <option>3</option><option>4</option>
+            <option>5</option><option>6</option>
+            <option>7</option><option>8</option>
+            <option>9</option><option>10</option>
+          </select>
+        </div>
+      </form>
+      </div>
+
+      <div class="row">
+      <form class="movie-form">
+        <div class="form-group">
+          <a href="/booking" id="bookTicketButton" class="btn btn-primary btn-lg">Book Ticket</a>
+        </div>
+      </form>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+<script>
+$(document).ready(function(){
+//$('#myModal').modal('show');
+$("#ticket.nav li>a").click(function(){
+  x=$(this).html();
+  sessionStorage.setItem("NoofSeats",x);
+});
+
+$("#ticket.nav li").click(function(){
+  x=$(this).html();
+  $(this).addClass("activeclass");
+  $(this).siblings('li.activeclass').removeClass("activeclass");
+});
+
+
+
+
+
+
+
+$("#bookTicketButton").click(function(){
+  sessionStorage.setItem("Class",$("#SeatClass option:selected").text());
+  sessionStorage.setItem("Moviedate",$("#MovieDates option:selected").text());
+  sessionStorage.setItem("Cinema",$("#Cinemas option:selected").text());
+  sessionStorage.setItem("City",$("#City option:selected").text());
+  sessionStorage.setItem("MovieName",$("#MovieTitle option:selected").text());
+  sessionStorage.setItem("ShowTime",$("#ShowTimings option:selected").text());
+  sessionStorage.setItem("NoofSeats",$("#NoSeats option:selected").text());
+  });
+});
+
+$('#myCarousel').carousel({
+  interval: 4000,
+  cycle: true
+});
+</script>

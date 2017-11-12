@@ -1,0 +1,1 @@
+{"version":3,"sources":["app/admin/admin.module.js"],"names":["angular","module"],"mappings":"AAAA;;AAEAA,QAAQC,MAAR,CAAe,qBAAf,EAAsC,CAAC,oBAAD,EAAuB,SAAvB,CAAtC","file":"admin.module.js","sourcesContent":["'use strict';\n\nangular.module('yoTemplateApp.admin', ['yoTemplateApp.auth', 'ngRoute']);\n"]}
